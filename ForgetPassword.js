@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     backgroundColor:INPUT_COLOR,
     borderRadius:10,
     marginBottom:24,
-
+ //sana
     
   },
   signupBtn: {
