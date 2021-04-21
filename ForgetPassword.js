@@ -11,14 +11,14 @@ import axios from 'axios';
 import {PRIMARY_COLOR,SECONDARY_COLOR,INPUT_COLOR} from "./Globals" ;
 const{width,height}=Dimensions.get("window");
 
-export default function LoginScreen(props) {
+export default function ForgetPassword(props) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     //const [name, setName] = useState("");
    
     const login = async () => {
      
-      const link = "http://localhost:4000/login";
+      const link = "http://localhost:4000/change";
       const body = {
           
           email: email,

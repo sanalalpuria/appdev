@@ -34,7 +34,7 @@ export default function LoginScreen(props) {
           //props.navigation;
           // navigate to any screen you want
          // navigation.navigate("Login");
-         props.navigation.navigate("Menu")
+         props.navigation.navigate("SignUp")
       }
       catch(error){
           alert('Error!!');
@@ -57,6 +57,7 @@ export default function LoginScreen(props) {
             style={styles.TextInput2}
             placeholder="Password"
             placeholderTextColor="#000"
+            secureTextEntry={true}
             onChangeText={(password) => setPassword(password)}
           />
         {/* <SafeAreaView style={styles.inputView}>
