@@ -6,10 +6,11 @@ import { StyleSheet, Text, View, Image,
     TouchableOpacity,
     SafeAreaView,Dimensions} from 'react-native';
 import  { useState } from 'react';
-import logo from "./pictures/logo.png" ; 
+import logo from "../pictures/logo.png" ; 
 import axios from 'axios';
-import {PRIMARY_COLOR,SECONDARY_COLOR,INPUT_COLOR} from "./Globals" ;
+//import {PRIMARY_COLOR,SECONDARY_COLOR,INPUT_COLOR} from "../Globals" ;
 const{width,height}=Dimensions.get("window");
+import styles from './styles';
 
 export default function ForgetPassword(props) {
     const [email, setEmail] = useState("");
@@ -47,7 +48,7 @@ export default function ForgetPassword(props) {
       
         
         <TextInput
-            style={styles.TextInput}
+            style={styles.TextInput2}
             placeholder="Email"
             placeholderTextColor="#000"
             onChangeText={(email) => setEmail(email)}
@@ -55,7 +56,7 @@ export default function ForgetPassword(props) {
         
         
           <TextInput
-            style={styles.TextInput}
+            style={styles.TextInput2}
             placeholder=" New Password"
             placeholderTextColor="#000"
             secureTextEntry={true}
@@ -72,53 +73,4 @@ export default function ForgetPassword(props) {
     );
   }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ffffff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  image: {
-    marginBottom: 24,
-    width:width*0.3,
-    height:width*0.3,
-    resizeMode:"contain",
-  },
-  inputView: {
-    backgroundColor: "#e81741",
-    borderRadius: 2,
-    width: "70%",
-    height: 45,
-    marginBottom: 20,
-    alignItems: "center",
-  },
-  
-  TextInput: {
-    height: 56,
-    width: width*0.6,
-    //flex: 1,
-    padding: 16,
-    //marginLeft: 125,
-    //alignItems:"center",
-    color:"#000",
-    backgroundColor:INPUT_COLOR,
-    borderRadius:10,
-    marginBottom:24,
- //sana
-    
-  },
-  signupBtn: {
-    width:width*0.6,
-   height:56,
-   borderRadius:10,
-   marginBottom:24,
-   backgroundColor:PRIMARY_COLOR,
-   alignItems: "center",
-   justifyContent: "center",
-  },
-  loginText:{
-    color:"#ffffff",
-  }
-  
-});
+

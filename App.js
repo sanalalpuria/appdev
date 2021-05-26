@@ -1,26 +1,12 @@
-import "react-native-gesture-handler";
-import React from 'react';
+import * as React from 'react';
+import { Provider } from 'react-redux';
+import store from './redux/Store';
+import Router from './Router';
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import LoginScreen from './LoginScreen';
-import SignupScreen from './SignupScreen' ;
-import ForgetPassword from './ForgetPassword'
-
-const Stack = createStackNavigator();
-
-function App() {
+export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="LogIn" component={LoginScreen} />
-        <Stack.Screen name="SignUp" component={SignupScreen} />
-        <Stack.Screen name="ForgetPassword" component={ForgetPassword} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <Router />
+    </Provider>
   );
 }
-
-
- 
-export default App;
