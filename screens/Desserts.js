@@ -1,55 +1,44 @@
 import React, { useState } from "react";
-import { Image, FlatList,Pressable, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, Dimensions, Button } from "react-native";
-import fries from '../assets/fries.png'; 
+import { Pressable, Image, FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, Dimensions } from "react-native";
+import desserts1 from '../assets/desserts1.jpeg'; 
+import desserts2 from '../assets/desserts2.jpeg'; 
+import desserts3 from '../assets/desserts3.jpeg'; 
 const numColumns=2;
 const WIDTH=Dimensions.get("window").width
 const DATA = [
-{   "id": "m1",
-    "name": "Lasagna",
-    "price": "350 Rs",
-    "img": "img"
-},
-{   "id": "m2",
-    "name": "Alfredo Pasta",
-    "price": "400 Rs",
-    "img": "img"
-},
-{   "id": "m3",
-    "name": "Mac&Cheese",
-    "price": "300 Rs",
-    "img": "img"
-},
-{   "id": "m4",
-    "name": "Beef Khausey",
-    "price": "250 Rs",
-    "img": "img"
-},
-{   "id": "5",
-    "name": "Chicken Khausey",
-    "price": "250 Rs",
-    "img": "img"
-},
+ {    "id" :"d1",
+      "name": "Cheesecake",
+      "price": "400 Rs",
+      "img": desserts1,
+  },
+  {     "id" : "d2",
+      "name": "Chocolate Cake",
+      "price": "350 Rs",
+      "img": desserts2,
+  },
+  {   "id": "d3",
+      "name": "Creme Brulee",
+      "price": "350 Rs",
+      "img": desserts3,
+  },
 ];
 
-const Item = ({ item, onPress, backgroundColor, textColor , onPressFunction}) => (
+const Item = ({ item, onPress, backgroundColor, textColor, onPressFunction }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-   
-    <Image source={fries} style={styles.image} />
+    <Image source={item.img} style={styles.image} />
     <Text style={[styles.title, textColor]}><b>{item.name}</b></Text>
     <Text style={[styles.title, textColor]}>{item.price}</Text>
     <Pressable onPress={onPressFunction}>
   <Text>ADD TO CART </Text>
 </Pressable>
   </TouchableOpacity>
-
-
 );
 
 const App = () => {
   const [selectedId, setSelectedId] = useState(null);
 
   const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "red" : "white";
+    const backgroundColor = item.id === selectedId ? 'red' : 'white';
     const color = item.id === selectedId ? 'black' : 'black';
 
     return (

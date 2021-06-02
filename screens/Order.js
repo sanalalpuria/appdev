@@ -11,9 +11,9 @@ import {
 import Starters from './Starters';
 import Main from './Main';
 import Deals from './Deals';
-// import Salads from './screens/Salads';
-// import Desserts from './screens/Desserts';
-// import Beverages from './screens/Beverages';
+import Salads from './Salads';
+import Desserts from './Desserts';
+import Beverages from "./Beverages"
 import CartButton from '../components/CartButton';
 
 import { View, useWindowDimensions } from 'react-native';
@@ -25,16 +25,17 @@ import * as Actions from '../redux/Actions';
 
 export default function Order() {
   const layout = useWindowDimensions();
-  const dispatch = useDispatch();
-  const login = (user) => dispatch({ type: Actions.LOGIN, payload: user });
+  //const dispatch = useDispatch();
+  //const login = (user) => dispatch({ type: Actions.LOGIN, payload: user });
 
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     { key: 'starters', title: 'Starters' },
     { key: 'main', title: 'Main' },
-    // { key: 'desserts', title: 'Desserts' },
-    // { key: 'beverages', title: 'Beverages' },
+    { key: 'desserts', title: 'Desserts' },
+    { key: 'beverages', title: 'Beverages' },
     { key: 'deals', title: 'Deals' },
+    { key: 'salads', title: 'Salads' },
   ]);
 
 const renderScene = ({ route, jumpTo }) => {
@@ -43,12 +44,14 @@ const renderScene = ({ route, jumpTo }) => {
       return <Starters jumpTo={jumpTo} />;
     case 'main':
       return <Main jumpTo={jumpTo} />;
-    // case 'desserts':
-    //   return <Main jumpTo={jumpTo} />;
-    // case 'beverages':
-    //   return <Main jumpTo={jumpTo} />;
+    case 'desserts':
+      return <Desserts jumpTo={jumpTo} />;
+    case 'beverages':
+      return <Beverages jumpTo={jumpTo} />;
     case 'deals':
       return <Deals jumpTo={jumpTo} />;
+      case 'salads':
+        return <Salads jumpTo={jumpTo} />;
     // case 'bev':
     //   return <Beverages jumpTo={jumpTo} />;
   }

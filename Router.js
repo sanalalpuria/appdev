@@ -8,6 +8,11 @@ import Order from './screens/Order';
 import Starters from './screens/Starters';
 import Main from './screens/Main';
 import Deals from './screens/Deals';
+import Desserts from './screens/Desserts';
+import Beverages from './screens/Beverages';
+import Salads from './screens/Salads';
+import CartScreen from './screens/CartScreen';
+//import PlaceOrder from './screens/PlaceOrder';
 import CartButton from "./components/CartButton"
 import ForgetPassword from './screens/ForgetPassword';
 import { useSelector } from 'react-redux';
@@ -17,9 +22,9 @@ import { useSelector } from 'react-redux';
 
 
 export default function App() {
-    const user = useSelector((state) => state.AuthReducers.user);
+    //const user = useSelector((state) => state.AuthReducers.user);
  
-    
+    const Stack = createStackNavigator();
           
        
     return (
@@ -28,9 +33,20 @@ export default function App() {
            
             
                
-                 {user ? (
+                 
         <Stack.Navigator>
                
+        <Stack.Screen
+                    name="Login"
+                    component={Login}
+                    options={{ title: 'Login' }}
+                />
+                 <Stack.Screen
+                    name="Register"
+                    component={Register}
+                    options={{ title: 'Register' }}
+                />
+       
                 <Stack.Screen
                     name="ForgetPassword"
                     component={ForgetPassword}
@@ -49,6 +65,21 @@ export default function App() {
                     }//end options
                 />
                 <Stack.Screen
+                    name="Salads"
+                    component={Salads}
+                    options={{ title: 'Salads' }}
+                />
+                 <Stack.Screen
+                    name="Beverages"
+                    component={Beverages}
+                    options={{ title: 'Bevarages' }}
+                />
+                 <Stack.Screen
+                    name="Desserts"
+                    component={Desserts}
+                    options={{ title: 'Desserts' }}
+                />
+                 <Stack.Screen
                     name="Starters"
                     component={Starters}
                     options={{ title: 'Starters' }}
@@ -63,22 +94,22 @@ export default function App() {
                     component={Deals}
                     options={{ title: 'Deals' }}
                 />
-                 </Stack.Navigator>
-      ) :
-       (
-        <Stack.Navigator>
-             <Stack.Screen
-                    name="Register"
-                    component={Register}
-                    options={{ title: 'Create Account' }}
+
+<Stack.Screen
+                    name="CartScreen"
+                    component={CartScreen}
+                    options={{ title: 'CartScreen' }}
                 />
-           <Stack.Screen
-                    name="Login"
-                    component={Login}
-                    options={{ title: 'Login' }}
-                />
-        </Stack.Navigator>
-      )}
+
+{/* <Stack.Screen
+                    name="PlaceOrder"
+                    component={PlaceOrder}
+                    options={{ title: 'Placeorder' }}
+                /> */}
+                 
+            
+            </Stack.Navigator>
+    
         </NavigationContainer>
     );
     //export default App;

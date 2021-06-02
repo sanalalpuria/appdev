@@ -11,8 +11,13 @@ import axios from 'axios';
 const{width,height}=Dimensions.get("window");
 //import {PRIMARY_COLOR,SECONDARY_COLOR,INPUT_COLOR} from "./Globals";
 import styles from './styles';
+import { useDispatch, useSelector } from 'react-redux';
+import * as Actions from '../redux/Actions';
+
 
 export default function LoginScreen(props) {
+  // const user = useSelector((state) => state.user); //data read from redux
+  // const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     //const [name, setName] = useState("");
@@ -35,7 +40,9 @@ export default function LoginScreen(props) {
           //props.navigation;
           // navigate to any screen you want
          // navigation.navigate("Login");
-         props.navigation.navigate("SignUp")
+         //dispatch({ type: Actions.LOGIN, payload: user }); //data write into redux
+         props.navigation.navigate('Order');
+         
       }
       catch(error){
           alert('Error!!');
