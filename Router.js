@@ -7,7 +7,7 @@ import Register from './screens/Register';
 import Order from './screens/Order';
 import Starters from './screens/Starters';
 import Main from './screens/Main';
-import Deals from './screens/Deals';
+
 import Desserts from './screens/Desserts';
 import Beverages from './screens/Beverages';
 import Salads from './screens/Salads';
@@ -89,11 +89,7 @@ export default function App() {
                     component={Main}
                     options={{ title: 'Main' }}
                 />
-                <Stack.Screen
-                    name="Deals"
-                    component={Deals}
-                    options={{ title: 'Deals' }}
-                />
+               
 
 <Stack.Screen
                     name="CartScreen"

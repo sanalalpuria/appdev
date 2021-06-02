@@ -10,7 +10,7 @@ import {
 } from 'react-native-tab-view';
 import Starters from './Starters';
 import Main from './Main';
-import Deals from './Deals';
+
 import Salads from './Salads';
 import Desserts from './Desserts';
 import Beverages from "./Beverages"
@@ -34,7 +34,7 @@ export default function Order() {
     { key: 'main', title: 'Main' },
     { key: 'desserts', title: 'Desserts' },
     { key: 'beverages', title: 'Beverages' },
-    { key: 'deals', title: 'Deals' },
+  
     { key: 'salads', title: 'Salads' },
   ]);
 
@@ -48,8 +48,7 @@ const renderScene = ({ route, jumpTo }) => {
       return <Desserts jumpTo={jumpTo} />;
     case 'beverages':
       return <Beverages jumpTo={jumpTo} />;
-    case 'deals':
-      return <Deals jumpTo={jumpTo} />;
+    
       case 'salads':
         return <Salads jumpTo={jumpTo} />;
     // case 'bev':
