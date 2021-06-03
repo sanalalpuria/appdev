@@ -12,6 +12,7 @@ import {
 } from "react-native";
 import styles from "./styles";
 const WIDTH = Dimensions.get("window").width;
+import logo from "../pictures/logo.png" ; 
 
 export default function Verify(props) {
   const [name, setName] = useState("");
@@ -41,6 +42,7 @@ export default function Verify(props) {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
+      <Image style={styles.image} source={logo} />
       <View>
         <Text style={styles.header}>Verify Address</Text>
       </View>

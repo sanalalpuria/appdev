@@ -13,11 +13,12 @@ import axios from 'axios';
 
 const{width,height}=Dimensions.get("window");
 import styles from './styles';
-
+//import logo from "../pictures/logo.png" ; 
 
 export default function Confirm(props) {
     return(
 <SafeAreaView  style={styles.container}>
+<Image style={styles.image} source={logo} />
 <View>
 <Text>Thank you for Ordering!</Text>
     </View>

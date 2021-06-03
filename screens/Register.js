@@ -36,7 +36,7 @@ export default function SignupScreen(props) {
           console.log('Success result: ', response);
         //  props.navigation;
           // navigate to any screen you want
-          props.navigation.navigate("LogIn");
+          props.navigation.navigate("Login");
       }
       catch(error){
           alert('Error!!');
