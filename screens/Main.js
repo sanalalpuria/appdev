@@ -1,43 +1,48 @@
 import React, { useState } from "react";
 import { Image, FlatList,Pressable, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, Dimensions, Button } from "react-native";
-import fries from '../assets/fries.png'; 
+
 const numColumns=2;
 import { useDispatch, useSelector } from 'react-redux';
 import { connect } from "react-redux";
 import * as Actions from '../redux/Actions';
+import main1 from '../assets/main1.jpeg'; 
+import main2 from '../assets/main2.jpeg'; 
+import main3 from '../assets/main3.jpeg'; 
+import main4 from '../assets/main4.jpeg'; 
+import main5 from '../assets/main5.jpeg'; 
 const WIDTH=Dimensions.get("window").width
 const DATA = [
 {   "id": "m1",
     "name": "Lasagna",
     "price": "350 Rs",
-    "img": "img"
+    "img": main1
 },
 {   "id": "m2",
     "name": "Alfredo Pasta",
     "price": "400 Rs",
-    "img": "img"
+    "img": main2
 },
 {   "id": "m3",
     "name": "Mac&Cheese",
     "price": "300 Rs",
-    "img": "img"
+    "img": main3
 },
 {   "id": "m4",
     "name": "Beef Khausey",
     "price": "250 Rs",
-    "img": "img"
+    "img": main4
 },
 {   "id": "5",
     "name": "Chicken Khausey",
     "price": "250 Rs",
-    "img": "img"
+    "img": main5
 },
 ];
 
 const Item = ({ dispatch, item, onPress, backgroundColor, textColor , onPressFunction}) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
    
-    <Image source={fries} style={styles.image} />
+    <Image source={item.img} style={styles.image} />
     <Text style={[styles.title, textColor]}><b>{item.name}</b></Text>
     <Text style={[styles.title, textColor]}>{item.price}</Text>
     <Pressable onPress={()=>{

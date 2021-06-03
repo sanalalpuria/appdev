@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Image, FlatList, Pressable, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, Dimensions } from "react-native";
-import fries from '../assets/fries.png'; 
+//import fries from '../assets/fries.png'; 
+import starter1 from '../assets/starter1.jpeg';
+import starter2 from '../assets/starter2.jpeg';
+import starter3 from '../assets/starter3.jpeg';
+import starter4 from '../assets/starter4.jpeg';
 const numColumns=2;
 import { useDispatch, useSelector } from 'react-redux';
 import { connect } from "react-redux";
@@ -10,28 +14,28 @@ const DATA = [
 {       "id": "st1",
         "name": "Fries",
         "price": "90 Rs",
-        "img": "fries",
+        "img": starter1,
 },
 {       "id": "st2",
         "name": "Wings",
         "price": "120 Rs",
-        "img": "",
+        "img": starter2,
 },
 {       "id": "st3",
         "name": "Onion Rings",
         "price": "90 Rs",
-        "img": "",
+        "img": starter3,
 },
 {       "id": "st4",
         "name": "Nachos",
         "price": "230 Rs",
-        "img": "",
+        "img": starter4,
 },
 ];
 
 const Item = ({ dispatch,item, onPress, backgroundColor, textColor, onPressFunction }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-      <Image source={fries} style={styles.image} />
+      <Image source={item.img} style={styles.image} />
     <Text style={[styles.title, textColor]}><b>{item.name}</b></Text>
     <Text style={[styles.title, textColor]}>{item.price}</Text>
     
