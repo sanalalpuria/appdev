@@ -94,6 +94,36 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     
-   }
+   },
+   cancelbtn: {
+    backgroundColor: "white",
+    alignContent: "center",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 10,
+    borderWidth: 0.5,
+    borderRadius: 3,
+    borderColor: "#C0ADAD",
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingBottom: 4,
+    paddingTop: 4,
+  },
+  header: {
+    fontSize: 26,
+    fontFamily: "Calibri",
+    marginBottom: 20,
+    marginTop: 5,
+    color: "#af2121",
+  },
+  inputAddress: {
+    backgroundColor: "#e1bbbb",
+    borderRadius: 3,
+    width: "60%",
+    height: 60,
+    marginBottom: 12,
+    paddingLeft: 10,
+    alignItems: "center",
+  }
 });
 export default styles;

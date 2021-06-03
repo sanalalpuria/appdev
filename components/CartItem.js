@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 const CartItem=({data,onPressRemove})=>{
     const {name,price,quantity}=data;
+    const total=price*quantity;
 
 return (
 <View  style={{
@@ -33,6 +34,9 @@ size={24} color="black" >
 </Ionicons>
      </TouchableOpacity>
     </View>
+    <Text style={styles.amt}>
+         {total}
+     </Text>
 </View>
 
 )};

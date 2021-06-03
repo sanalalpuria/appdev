@@ -47,6 +47,13 @@ export default function ForgetPassword(props) {
                   <TouchableOpacity style={styles.signupBtn} onPress={() => props.navigation.navigate("PlaceOrder")} >
                 <Text style={styles.loginText}>Place Order</Text>
             </TouchableOpacity>
+
+            <TouchableOpacity
+        style={styles.cancelbtn}
+        onPress={() => props.navigation.navigate("Order")}
+      >
+       Cancel
+      </TouchableOpacity>
             </View>
         </SafeAreaView>
     );
