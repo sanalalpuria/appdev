@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import * as React from "react";
+import { StyleSheet } from "react-native";
 import {
   TabView,
   TabBar,
@@ -7,21 +7,19 @@ import {
   NavigationState,
   SceneRendererProps,
   SafeAreaView,
-} from 'react-native-tab-view';
-import Starters from './Starters';
-import Main from './Main';
+} from "react-native-tab-view";
+import Starters from "./Starters";
+import Main from "./Main";
 
-import Salads from './Salads';
-import Desserts from './Desserts';
-import Beverages from "./Beverages"
-import CartButton from '../components/CartButton';
+import Salads from "./Salads";
+import Desserts from "./Desserts";
+import Beverages from "./Beverages";
+import CartButton from "../components/CartButton";
 
-import { View, useWindowDimensions } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
-import * as Actions from '../redux/Actions';
-
-
- 
+import { View, useWindowDimensions } from "react-native";
+import { useSelector, useDispatch } from "react-redux";
+import * as Actions from "../redux/Actions";
+import { PRIMARY_COLOR } from "../Globals";
 
 export default function Order() {
   const layout = useWindowDimensions();
@@ -30,43 +28,41 @@ export default function Order() {
 
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'starters', title: 'Starters' },
-    { key: 'main', title: 'Main' },
-    { key: 'desserts', title: 'Desserts' },
-    { key: 'beverages', title: 'Beverages' },
-  
-    { key: 'salads', title: 'Salads' },
+    { key: "starters", title: "Starters" },
+    { key: "main", title: "Main" },
+    { key: "desserts", title: "Desserts" },
+    { key: "beverages", title: "Beverages" },
+    { key: "salads", title: "Salads" },
   ]);
 
-const renderScene = ({ route, jumpTo }) => {
-  switch (route.key) {
-    case 'starters':
-      return <Starters jumpTo={jumpTo} />;
-    case 'main':
-      return <Main jumpTo={jumpTo} />;
-    case 'desserts':
-      return <Desserts jumpTo={jumpTo} />;
-    case 'beverages':
-      return <Beverages jumpTo={jumpTo} />;
-    
-      case 'salads':
+  const renderScene = ({ route, jumpTo }) => {
+    switch (route.key) {
+      case "starters":
+        return <Starters jumpTo={jumpTo} />;
+      case "main":
+        return <Main jumpTo={jumpTo} />;
+      case "desserts":
+        return <Desserts jumpTo={jumpTo} />;
+      case "beverages":
+        return <Beverages jumpTo={jumpTo} />;
+      case "salads":
         return <Salads jumpTo={jumpTo} />;
-    // case 'bev':
-    //   return <Beverages jumpTo={jumpTo} />;
-  }
-};
-  const renderTabBar = props => (
-  <TabBar
-    {...props}
-    
-    indicatorStyle={{ backgroundColor: 'white' }}
-    style={{paddingTop:12, backgroundColor: 'red' }}
-  />
-);
- 
+      // case 'bev':
+      //   return <Beverages jumpTo={jumpTo} />;
+    }
+  };
+  const renderTabBar = (props) => (
+    <TabBar
+      {...props}
+      scrollEnabled
+      indicatorStyle={{ backgroundColor: "white", padding: 2 }}
+      style={{ paddingTop: 12, backgroundColor: PRIMARY_COLOR }}
+    />
+  );
+
   return (
     <TabView
-     renderTabBar={renderTabBar}
+      renderTabBar={renderTabBar}
       navigationState={{ index, routes }}
       renderScene={renderScene}
       onIndexChange={setIndex}

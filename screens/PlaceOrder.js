@@ -8,11 +8,11 @@ import {
   Text,
   View,
   TouchableOpacity,
-  Dimensions, Alert
+  Dimensions,
+  Alert,
 } from "react-native";
 import styles from "./styles";
-const WIDTH = Dimensions.get("window").width;
-import logo from "../pictures/logo.png" ; 
+import logo from "../pictures/logo.png";
 
 export default function Verify(props) {
   const [name, setName] = useState("");
@@ -71,13 +71,19 @@ export default function Verify(props) {
         />
       </View>
       <TouchableOpacity
-        style={styles.loginBtn}
+        style={styles.primarybutton}
         onPress={() => Alert.alert("Your Order has been placed!")}
       >
-        <Text style={styles.loginText} onPress={() => props.navigation.navigate("Confirm")} >CONFIRM ORDER</Text>
+        <Text
+          style={styles.loginText}
+          onPress={() => props.navigation.navigate("Confirm")}
+        >
+          CONFIRM ORDER
+        </Text>
       </TouchableOpacity>
+
       <TouchableOpacity
-        style={styles.cancelbtn}
+        style={styles.cancelbtn1}
         onPress={() => props.navigation.navigate("CartScreen")}
       >
         <Text>Cancel</Text>

@@ -29,7 +29,7 @@ export default function ForgetPassword(props) {
   return (
     <SafeAreaView style={styles.container}>
       <Image style={styles.image} source={logo} />
-      <View style={{ width: "60%", alignItems: "center" }}>
+      <View style={{ width: "60%" }}>
         <FlatList
           style={{
             width: "60%",
@@ -50,21 +50,20 @@ export default function ForgetPassword(props) {
           // extraData={selectedId}
           // numColumns={numColumns}
         />
-
-        <TouchableOpacity
-          style={styles.primarybutton}
-          onPress={() => props.navigation.navigate("PlaceOrder")}
-        >
-          <Text style={styles.loginText}>Place Order</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.cancelbtn}
-          onPress={() => props.navigation.navigate("Order")}
-        >
-          Cancel
-        </TouchableOpacity>
       </View>
+      <TouchableOpacity
+        style={styles.primarybutton}
+        onPress={() => props.navigation.navigate("PlaceOrder")}
+      >
+        <Text style={styles.loginText}>Place Order</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.cancelbtn1}
+        onPress={() => props.navigation.navigate("Order")}
+      >
+        <Text>Cancel</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }

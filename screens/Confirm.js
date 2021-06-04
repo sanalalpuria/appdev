@@ -25,15 +25,20 @@ export default function Confirm(props) {
   return (
     <SafeAreaView style={styles.container}>
       <Image style={styles.image} source={logo} />
-      <View>
-        <Text>Thank you for Ordering!</Text>
-      </View>
-      <View>
+      <View
+        style={
+          ({ width: "60%" },
+          { alignContent: "center" },
+          { alignItems: "center" })
+        }
+      >
+        <Text style={styles.header}>Thank you for Ordering!</Text>
+
         <TouchableOpacity
-          style={styles.cancelbtn}
+          style={styles.cancelbtn1}
           onPress={() => props.navigation.navigate("Order")}
         >
-          Back
+          <Text>Back</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

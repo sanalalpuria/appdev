@@ -35,9 +35,7 @@ const Item = ({
 }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
     <Image source={logo} style={styles.image} />
-    <Text style={[styles.title, textColor]}>
-      <b>{item.name}</b>
-    </Text>
+    <Text style={[styles.title, textColor]}>{item.name}</Text>
     <Text style={[styles.title, textColor]}>{item.price}</Text>
     <Pressable
       style={styles1.cancelbtn}
@@ -103,6 +101,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 12,
     color: "#fff",
+    fontWeight: "bold",
   },
   image: {
     borderRadius: 100,

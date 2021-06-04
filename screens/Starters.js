@@ -20,6 +20,7 @@ const numColumns = 2;
 import { useDispatch, useSelector } from "react-redux";
 import { connect } from "react-redux";
 import * as Actions from "../redux/Actions";
+import { BorderlessButton } from "react-native-gesture-handler";
 const WIDTH = Dimensions.get("window").width;
 const DATA = [
   { id: "st1", name: "Fries", price: "90 Rs", img: starter1 },
@@ -38,9 +39,7 @@ const Item = ({
 }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
     <Image source={item.img} style={styles.image} />
-    <Text style={[styles.title, textColor]}>
-      <b>{item.name}</b>
-    </Text>
+    <Text style={[styles.title, textColor]}>{item.name}</Text>
     <Text style={[styles.title, textColor]}>{item.price}</Text>
 
     <Pressable
@@ -107,6 +106,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 12,
     color: "#fff",
+    fontWeight: "bold",
   },
   image: {
     borderRadius: 100,
