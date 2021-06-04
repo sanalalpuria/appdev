@@ -17,6 +17,7 @@ import desserts3 from "../assets/desserts3.jpeg";
 import { useDispatch, useSelector } from "react-redux";
 import { connect } from "react-redux";
 import * as Actions from "../redux/Actions";
+import { PRIMARY_COLOR } from "../Globals";
 const numColumns = 2;
 const WIDTH = Dimensions.get("window").width;
 const DATA = [
@@ -57,7 +58,7 @@ const App = () => {
   const [selectedId, setSelectedId] = useState(null);
   const dispatch = useDispatch();
   const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "red" : "white";
+    const backgroundColor = item.id === selectedId ? PRIMARY_COLOR : "white";
     const color = item.id === selectedId ? "black" : "black";
 
     return (

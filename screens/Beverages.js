@@ -11,6 +11,7 @@ import {
   Dimensions,
 } from "react-native";
 import logo from "../assets/logo.png";
+import { PRIMARY_COLOR } from "../Globals";
 import styles1 from "./styles";
 const numColumns = 2;
 import { useDispatch, useSelector } from "react-redux";
@@ -56,7 +57,7 @@ const App = () => {
   const [selectedId, setSelectedId] = useState(null);
   const dispatch = useDispatch();
   const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "red" : "white";
+    const backgroundColor = item.id === selectedId ? PRIMARY_COLOR : "white";
     const color = item.id === selectedId ? "black" : "black";
 
     return (
