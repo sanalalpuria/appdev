@@ -1,42 +1,38 @@
-import { StyleSheet, Dimensions } from 'react-native';
-const{width,height}=Dimensions.get("window");
-import {PRIMARY_COLOR,SECONDARY_COLOR,INPUT_COLOR} from "../Globals";
+import { StyleSheet, Dimensions } from "react-native";
+const { width, height } = Dimensions.get("window");
+import { PRIMARY_COLOR, SECONDARY_COLOR, INPUT_COLOR } from "../Globals";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
   image: {
     width: 305,
     height: 170,
     marginBottom: 20,
   },
+
   inputView: {
-    backgroundColor: '#e1bbbb',
+    backgroundColor: "#e1bbbb",
     borderRadius: 3,
-    width: '60%',
+    width: "60%",
     height: 40,
     marginBottom: 12,
     paddingLeft: 10,
-
   },
   TextInput2: {
     height: 56,
-    width: width*0.6,
+    width: width * 0.6,
     //flex: 1,
     padding: 16,
     //marginLeft: 125,
     //alignItems:"center",
-    color:"#000",
-    backgroundColor:INPUT_COLOR,
-    borderRadius:10,
-    marginBottom:24,
-
-
-
-    
+    color: "#000",
+    backgroundColor: INPUT_COLOR,
+    borderRadius: 10,
+    marginBottom: 24,
   },
 
   TextInput: {
@@ -53,49 +49,47 @@ const styles = StyleSheet.create({
   },
 
   loginBtn: {
-    width: '40%',
+    width: "40%",
     borderRadius: 0,
     height: 40,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     marginTop: 35,
-    backgroundColor: '#af2121',
+    backgroundColor: "#af2121",
   },
 
   loginText: {
-    color: '#fff',
+    color: "#fff",
   },
   signupBtn: {
-    width: '60%',
+    width: "60%",
     borderRadius: 2,
     height: 35,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     marginTop: 40,
-    backgroundColor: '#cc0830',
+    backgroundColor: "#cc0830",
   },
   secondarybutton: {
     //width: '60%',
     height: 56,
     borderRadius: 10,
-    marginBottom: 8,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop:5,
-    
-  },
-  primarybutton:{
-    width:width*0.6,
-    height:56,
-    borderRadius:10,
-    marginBottom:24,
-    backgroundColor:PRIMARY_COLOR,
+    marginBottom: 5,
+    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    
-   },
-   cancelbtn: {
+    marginTop: 3,
+  },
+  primarybutton: {
+    width: width * 0.6,
+    height: 56,
+    borderRadius: 10,
+    marginBottom: 24,
+    backgroundColor: PRIMARY_COLOR,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  cancelbtn: {
     backgroundColor: "white",
     alignContent: "center",
     alignItems: "center",
@@ -124,6 +118,6 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     paddingLeft: 10,
     alignItems: "center",
-  }
+  },
 });
 export default styles;
