@@ -30,7 +30,6 @@ export default function App() {
           headerTintColor: "white",
           headerStyle: {
             backgroundColor: PRIMARY_COLOR,
-            justifyContent: "center",
           },
         }}
       >
