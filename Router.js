@@ -7,15 +7,16 @@ import Register from './screens/Register';
 import Order from './screens/Order';
 import Starters from './screens/Starters';
 import Main from './screens/Main';
-import Confirm from './screens/Confirm';
 import Desserts from './screens/Desserts';
 import Beverages from './screens/Beverages';
 import Salads from './screens/Salads';
 import CartScreen from './screens/CartScreen';
-import PlaceOrder from './screens/PlaceOrder';
+import Verify from './screens/Verify';
+//import PlaceOrder from './screens/PlaceOrder';
 import CartButton from "./components/CartButton"
 import ForgetPassword from './screens/ForgetPassword';
 import { useSelector } from 'react-redux';
+import Verify from './screens/Verify';
 
 
   
@@ -96,19 +97,17 @@ export default function App() {
                     component={CartScreen}
                     options={{ title: 'CartScreen' }}
                 />
+                <Stack.Screen
+                    name="Verify"
+                    component={Verify}
+                    options={{ title: 'Checkout' }}
+                />
 
-<Stack.Screen
+{/* <Stack.Screen
                     name="PlaceOrder"
                     component={PlaceOrder}
                     options={{ title: 'Placeorder' }}
-                />
-
-
-<Stack.Screen
-                    name="Confirm"
-                    component={Confirm}
-                    options={{ title: 'Confirm' }}
-                />
+                /> */}
                  
             
             </Stack.Navigator>
