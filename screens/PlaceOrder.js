@@ -8,11 +8,11 @@ import {
   Text,
   View,
   TouchableOpacity,
-  Dimensions, Alert
+  Dimensions,
+  Alert,
 } from "react-native";
 import styles from "./styles";
-const WIDTH = Dimensions.get("window").width;
-import logo from "../pictures/logo.png" ; 
+import logo from "../pictures/logo.png";
 
 export default function Verify(props) {
   const [name, setName] = useState("");
@@ -46,38 +46,42 @@ export default function Verify(props) {
       <View>
         <Text style={styles.header}>Verify Address</Text>
       </View>
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
-          placeholder="Full Name"
-          placeholderTextColor="#000"
-          onChangeText={(name) => setName(name)}
-        />
-      </View>
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
-          placeholder="Address"
-          placeholderTextColor="#000"
-          onChangeText={(address) => setAddress(address)}
-        />
-      </View>
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
-          placeholder="Phone Number"
-          placeholderTextColor="#000"
-          onChangeText={(phone) => setPhone(phone)}
-        />
-      </View>
+
+      <TextInput
+        style={styles.TextInput2}
+        placeholder="Full Name"
+        placeholderTextColor="#000"
+        onChangeText={(name) => setName(name)}
+      />
+
+      <TextInput
+        style={styles.TextInput2}
+        placeholder="Address"
+        placeholderTextColor="#000"
+        onChangeText={(address) => setAddress(address)}
+      />
+
+      <TextInput
+        style={styles.TextInput2}
+        placeholder="Phone Number"
+        placeholderTextColor="#000"
+        onChangeText={(phone) => setPhone(phone)}
+      />
+
       <TouchableOpacity
-        style={styles.loginBtn}
+        style={styles.primarybutton}
         onPress={() => Alert.alert("Your Order has been placed!")}
       >
-        <Text style={styles.loginText} onPress={() => props.navigation.navigate("Confirm")} >CONFIRM ORDER</Text>
+        <Text
+          style={styles.loginText}
+          onPress={() => props.navigation.navigate("Confirm")}
+        >
+          CONFIRM ORDER
+        </Text>
       </TouchableOpacity>
+
       <TouchableOpacity
-        style={styles.cancelbtn}
+        style={styles.cancelbtn1}
         onPress={() => props.navigation.navigate("CartScreen")}
       >
         <Text>Cancel</Text>
