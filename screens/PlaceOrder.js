@@ -46,33 +46,33 @@ export default function Verify(props) {
       <View>
         <Text style={styles.header}>Verify Address</Text>
       </View>
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
-          placeholder="Full Name"
-          placeholderTextColor="#000"
-          onChangeText={(name) => setName(name)}
-        />
-      </View>
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
-          placeholder="Address"
-          placeholderTextColor="#000"
-          onChangeText={(address) => setAddress(address)}
-        />
-      </View>
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
-          placeholder="Phone Number"
-          placeholderTextColor="#000"
-          onChangeText={(phone) => setPhone(phone)}
-        />
-      </View>
+
+      <TextInput
+        style={styles.TextInput2}
+        placeholder="Full Name"
+        placeholderTextColor="#000"
+        onChangeText={(name) => setName(name)}
+      />
+
+      <TextInput
+        style={styles.TextInput2}
+        placeholder="Address"
+        placeholderTextColor="#000"
+        onChangeText={(address) => setAddress(address)}
+      />
+
+      <TextInput
+        style={styles.TextInput2}
+        placeholder="Phone Number"
+        placeholderTextColor="#000"
+        onChangeText={(phone) => setPhone(phone)}
+      />
+
       <TouchableOpacity
         style={styles.primarybutton}
-        onPress={() => Alert.alert("Your Order has been placed!")}
+        onPress={() => {
+          order;
+        }}
       >
         <Text
           style={styles.loginText}

@@ -23,7 +23,7 @@ export default function ForgetPassword(props) {
   const [password, setPassword] = useState("");
   //const [name, setName] = useState("");
 
-  const login = async () => {
+  const forgot = async () => {
     const link = "http://localhost:4000/change";
     const body = {
       email: email,
@@ -35,10 +35,7 @@ export default function ForgetPassword(props) {
       const response = await axios.post(link, body);
       // const { data } = response.data;
       console.log("Success result: ", response);
-      // navigate to any screen you want
-      props.navigation;
-      // navigate to any screen you want
-      navigation.navigate("Login");
+      props.navigation.navigate("Login");
     } catch (error) {
       alert("Error!!");
       console.log("e", error);
@@ -63,10 +60,7 @@ export default function ForgetPassword(props) {
         onChangeText={(password) => setPassword(password)}
       />
 
-      <TouchableOpacity
-        style={styles.primarybutton}
-        onPress={() => props.navigation.navigate("LogIn")}
-      >
+      <TouchableOpacity style={styles.primarybutton} onPress={forgot}>
         <Text style={styles.loginText}>Change Password</Text>
       </TouchableOpacity>
     </SafeAreaView>

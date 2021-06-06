@@ -55,7 +55,7 @@ const App = () => {
   const [selectedId, setSelectedId] = useState(null);
   const dispatch = useDispatch();
   const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? PRIMARY_COLOR : "white";
+    const backgroundColor = item.id === selectedId ? "white" : "white";
     const color = item.id === selectedId ? "black" : "black";
 
     return (

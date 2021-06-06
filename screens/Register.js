@@ -67,20 +67,6 @@ export default function SignupScreen(props) {
         secureTextEntry={true}
         onChangeText={(password) => setPassword(password)}
       />
-      {/* <SafeAreaView style={styles.inputView}>
-          <TextInput
-            style={styles.TextInput}
-            placeholder="Name"
-            placeholderTextColor="#ffffff"
-            onChangeText={(name) => setName(name)}
-          />
-        </SafeAreaView> */}
-      {/* <SafeAreaView style={styles.inputView}>
-          
-        </SafeAreaView> */}
-      {/* <SafeAreaView style={styles.inputView}>
-         
-        </SafeAreaView> */}
 
       <TouchableOpacity style={styles.primarybutton} onPress={signup}>
         <Text style={styles.loginText}>SIGN UP</Text>
