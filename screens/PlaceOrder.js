@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import styles from "./styles";
 import logo from "../pictures/logo.png";
+import axios from "axios";
 
 export default function Verify(props) {
   const [name, setName] = useState("");
@@ -29,7 +30,7 @@ export default function Verify(props) {
     //  alert("done");
     //  console.log("h");
     try {
-      const response = await axios.post(link, body);
+      const response = await axios.put(link, body);
       // const { data } = response.data;
       console.log("Success result: ", response);
       // navigate to any screen you want
@@ -74,7 +75,14 @@ export default function Verify(props) {
           order;
         }}
       >
-        <Text style={styles.loginText}>CONFIRM ORDER</Text>
+        <Text
+          style={styles.loginText}
+          onPress={() => {
+            order;
+          }}
+        >
+          CONFIRM ORDER
+        </Text>
       </TouchableOpacity>
 
       <TouchableOpacity

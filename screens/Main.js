@@ -43,7 +43,7 @@ const Item = ({
     <Image source={item.img} style={styles.image} />
     <Text style={[styles.title, textColor]}>{item.name}</Text>
     <Text style={[styles.title, textColor]}>{item.price}</Text>
-    <Pressable
+    <TouchableOpacity
       style={styles1.cancelbtn}
       onPress={() => {
         // dispatch(Actions.ADD_TO_CART(selectedId)) ;
@@ -53,7 +53,7 @@ const Item = ({
       }}
     >
       <Text>ADD TO CART </Text>
-    </Pressable>
+    </TouchableOpacity>
   </TouchableOpacity>
 );
 

@@ -32,7 +32,7 @@ export default function ForgetPassword(props) {
       <View style={{ width: "60%" }}>
         <FlatList
           style={{
-            width: "60%",
+            maxHeight: 240,
           }}
           data={cart}
           renderItem={({ item }) => {
