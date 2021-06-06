@@ -33,7 +33,7 @@ export default function Verify(props) {
       // const { data } = response.data;
       console.log("Success result: ", response);
       // navigate to any screen you want
-      // props.navigation.navigate("LogIn");
+      props.navigation.navigate("Confirm");
     } catch (error) {
       alert("Error!!");
       console.log("e", error);
@@ -74,12 +74,7 @@ export default function Verify(props) {
           order;
         }}
       >
-        <Text
-          style={styles.loginText}
-          onPress={() => props.navigation.navigate("Confirm")}
-        >
-          CONFIRM ORDER
-        </Text>
+        <Text style={styles.loginText}>CONFIRM ORDER</Text>
       </TouchableOpacity>
 
       <TouchableOpacity

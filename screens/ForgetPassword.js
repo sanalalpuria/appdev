@@ -35,6 +35,8 @@ export default function ForgetPassword(props) {
       const response = await axios.post(link, body);
       // const { data } = response.data;
       console.log("Success result: ", response);
+      //  props.navigation;
+      // navigate to any screen you want
       props.navigation.navigate("Login");
     } catch (error) {
       alert("Error!!");
